@@ -21,6 +21,8 @@ jobs:
       platform: aws
       region: us-east-1
       account: 1234567891012
+      username: ${{secrets.USERNAME}}
+      password: ${{secrets.PASSWORD}}
 
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -34,6 +36,8 @@ jobs:
           echo "Esto es el valor de de platform ${{env.platform}}"
           echo "Este es el valor de Region: ${{env.region}}"
           echo "Este es el account:  ${{env.account}}"
+          echo "User name is: ${{secrets.USERNAME}}"
+          echo "Password is ${{secrets.PASSWORD}}"
       - name: "Mostrar variables por defecto"
         run: |
           echo "Evento: ${{toJSON(github.event)}}"
