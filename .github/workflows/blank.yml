@@ -30,8 +30,7 @@ jobs:
       - name: "Mostrar Mensaje"
         run: echo "Hola Mundo"
       - name: "Mostrar Variables"
-        run: [
+        run: |
           echo "Esto es el valor de de platform ${{env.platform}}"
-          echo "Este es el valor de Region: ${{region}}"
-          echo "Este es el account:  ${{account"}}
-        ]
+          echo "Este es el valor de Region: ${{env.region}}"
+          echo "Este es el account:  ${{env.account}}"
