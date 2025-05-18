@@ -38,6 +38,10 @@ jobs:
           echo "Este es el account:  ${{env.account}}"
           echo "User name is: ${{secrets.USERNAME}}"
           echo "Password is ${{secrets.PASSWORD}}"
+      - name: "Mostrar valores solo si el usuario correcto"
+        if: ${{env.username != '' && env.password != ''}}
+        run: |
+          echo "Si existe ese usuario"
       - name: "Mostrar variables por defecto"
         run: |
           echo "Evento: ${{toJSON(github.event)}}"
